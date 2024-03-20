@@ -1,0 +1,360 @@
+
+/* font-family: "Roboto Mono", monospace;
+font-family: "Inconsolata", monospace; */
+
+
+/* NORMALIZACIÓN */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*Mantiene el ancho y algo a pesar del padding y border (no afectan al ancho y alto de la caja) */
+    font-family: "Inconsolata", monospace;
+    list-style: none;      /* quitar decoración listas (ej.iconos-puntos)*/
+    text-decoration: none; /* quitar decoración enlaces (ej. subrayado-color)*/
+    color: white;
+
+}
+
+body{
+    background-color: black;  /* TO DO: borrar luego */
+}
+
+
+
+
+
+
+/* --- 1- HEADER --- */
+
+/* HEADER */
+header{
+    position: fixed;   /* header se quede fijo en parte superior */
+    right: 0;
+    top: 0;
+    z-index: 100;     /*header se muestre por encima */
+
+    width: 100%;
+    display: flex;   /* elementos se muestren en línea */
+    justify-content: space-between;    /* Eje horizontal X: space-between */
+    align-items: center;               /* Eje vertical Y: centrado */
+    padding: 15px 3%;   /* vertical horizontal */
+
+    background-color: transparent;
+}
+
+
+/* LOGO */
+.logo{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+
+/* NAVLIST */
+.navlist{
+    display: flex; /* elementos lista se pongan en línea */
+}
+
+.navlist a{
+    margin-left: 60px;  /*separar ítems entre sí */
+    font-size: 15px;
+    font-weight: 600;
+
+    border-bottom: 2px solid transparent;  /*subrayado transparente de nav */
+    transition: all .5s ease;    /* todas las transiciones duran 5 segundo*/
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid white; /* aparce subrayao blanco al hacer hover */
+}
+
+
+
+/* ICONO MENÚ */
+#menu-icon{
+    display: none;   /* solo se debe ver cuando la página esté colapsada */
+}  
+
+#menu-icon{
+    font-size: 35px;
+    z-index: 101;     /*para que esté encima del header*/
+    cursor: pointer;  /*para que aparezca la maito cuando mouse esté encima */
+}
+
+#menu-toggle{
+    display: none;  /* nunca quiero que se vea el checkbox, aunque sí funcione como tal */
+}
+
+.menu-icon-action{
+    display: none;  /* para que no se le peuda hacer click*/
+}
+
+
+
+
+
+
+/* --- 2) HERO --- */
+
+.hero{
+    height: 100%;
+    font-weight: 100%;
+    min-height: 100vh;  /*no puede ocupar menos que la altura de pantalla*/
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%); /*fondo de color gradiente */
+
+    position: relative;  /*para que sea relativo al contenedor (nospermie usar top, bottom, left, right y poder darle altura */
+    display: grid;      /* para que el hero se peuda dividir en una grilla*/
+    grid-template-columns: 1fr 1fr;  /*2 columnas */
+
+    align-items: center; /* alinear en Eje vertical Y: centrado */
+    gap: 2rem; /*espacio entre las 2 columnas */
+}
+
+section{
+    padding: 0 8%;  /*vertical no   horizontal si: para separar de los bordes costado */
+
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.hero-text h1{
+    font-family: "Roboto Mono", monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px; /*arriba  der-izq  abajo*: se separe de lo de abajo*/
+}
+
+.hero-text p{
+    font-size: 80%;  /*80% del contenedor padre: se achica si disminuye pantalla */
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-text a{
+    display: inline-block; /*que siga siendo inline pero permita usar propiedades de block como top y se le pueda dar un ancho y alto*/
+    
+    padding: 13px 30px; /*vertical horizontal*/
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    border-radius: 30px;
+
+    transition: all .5s ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.videos{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos i{
+    vertical-align: middle; /*alinear eje vertical Y en medio*/
+    margin-right: 5px;
+}
+
+
+/* HERO-IMG */
+
+.hero-img img{
+    width: 400px;
+    margin: 10% 0 0 10%;  /*arriba 10px, drecha 0, abajo 0, izquierda 10px para separar texto*/
+    transition: all 5s linear; /*transicion lineal lenta de 5seg*/
+
+    /* mi foto */
+    border-radius: 50%;
+    border: 3px solid #006e6e;
+}
+
+.hero-img img:hover{
+    width: 450px;
+    opacity: 0.6;
+}
+
+
+
+
+
+/* --- 3) ICONOS SOCIALES--- */
+.icons{
+    position: absolute;
+    top: 50lvh;      /* ubicado a mitad vertical*/
+    padding: 0 3%;   /*vertical 0, horizontal 3% */
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;  /*los pongo en bloque para que cada uno ocupe toda la línea y se vayan abajo */
+    margin: 26px 0; 
+    font-size: 24px;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+
+
+
+/* --- 4) SCROLL ARROW --- */
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    
+    background-color: #21383d ;
+    border-radius: 30px;
+
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+
+
+
+
+
+/* - - - RESPONSIVE - - - */
+
+@media (max-width:992px) {
+    
+    /* HERO SECTION */
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-text p{
+        font-size: 70%;
+    }
+
+    .hero-img{
+        text-align: center;
+        
+    }
+
+    .hero-img img{
+        width: 60%;  /*profe 80% */
+        /* margin: 10% 0 0 10%; PROFE, pero yo lo centré */
+        margin: 10% auto 0; /*top 20,   horizontal centrado con auto, bottom 0 */
+    }
+
+    /* profe no puso esto: yo sí para mantener centrada imagen y 70% en vez 450px donde se agranda */
+    .hero-img img:hover{
+        width: 70%;
+        margin-left: calc((70% - 60%) / 2);  
+        margin-right: calc((70% - 60%) / 2);
+    } 
+
+
+    /* ICONS SOCIAL */
+    .icons{
+        display: none;
+    }
+
+    /* SCROLL ARROW */
+    .scroll-down{
+        display: none;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .navlist{
+        position: absolute; /* para que se ponga por encima todo*/
+        top: 100%;
+        right: -100%;  /*escondido al inicio */
+        width: 200px;
+        height: 180px;
+
+        background-color: #021719ef;
+
+        /* para que se comporte como columna y no fila */
+        display: flex;
+        flex-direction: column;
+        align-items: center;   /*alinear eje x no principal */
+        
+        padding: 30px 20px;   /*vertical horizontal*/
+        transition: all .1s ease;
+    }
+
+    .navlist a{
+        margin-left: 0;
+        display: block;
+        padding: 7px 0;
+    }
+
+
+    /* si está checked selecciono el hermano de todo eso y le doy right 0 */
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+
+
+    /* HERO SECTION */
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img{
+        margin: 0 0 30px;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    
+    /* ICONS y SCROLL ya estaban 
+       con display: none 
+    */
+}
+
